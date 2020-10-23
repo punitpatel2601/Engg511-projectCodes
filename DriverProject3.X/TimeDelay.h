@@ -74,8 +74,9 @@ extern "C" {
 }
 #endif /* __cplusplus */
 
-#endif	/* XC_HEADER_TEMPLATE_H */
-
 void Delay_ms(uint16_t time_ms);
 
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void);
+
+#endif	/* XC_HEADER_TEMPLATE_H */
+

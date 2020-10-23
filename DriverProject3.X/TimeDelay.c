@@ -9,7 +9,9 @@
 #include "xc.h"
 
 
-void Delay_ms(uint16_t time_ms){
+void Delay_ms(uint16_t time_ms)
+{
+    unsigned int simpleClkVal = 16; // this is  simplified value of (32000/2000)
     
     INTCON1bits.NSTDIS = 1; // don't need nested interrupts
     T1CONbits.TCKPS = 0; // Pre-scalar is 1
@@ -19,8 +21,12 @@ void Delay_ms(uint16_t time_ms){
     TMR1 = 0; //clear TMR1
     IPC0bits.T1IP = 7; // set highest priority
     IEC0bits.T1IE = 1; // enable interrupt request for timer1
-    IFS0bits.T1IF = 1; //might not need since it automatically sets it once TMR1 = PR1
-    PR1 = (time_ms/1000)/(2/32000); // calculate the PR1 value
+    // IFS0bits.T1IF = 1; //might not need, since it automatically sets it once TMR1 = PR1
+    
+    PR1 = (time_ms*simpleClkVal); // calculate the PR1 value, 
+    // calculated by (time_ms/1000)/(2/32000) which is equal to (time_ms*32000)/(2000), 
+    // thus simplified value is time_ms*(32000/2000)
+    
     Idle(); // idle while it increments TMR1 to match PR1
     return;
 }

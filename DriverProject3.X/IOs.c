@@ -44,8 +44,7 @@ void IOcheck (void)
                 }
                 else{
                     LATBbits.LATB8 = 1;
-                }
-                             
+                }                
             }
         }
         while(PORTAbits.RA4 == 0) // PB2 is pressed
@@ -63,8 +62,7 @@ void IOcheck (void)
                 }
                 else{
                     LATBbits.LATB8 = 1;
-                } 
-                
+                }                 
             }
         }
         while(PORTBbits.RB4 == 0) // PB3 is pressed
@@ -82,8 +80,7 @@ void IOcheck (void)
                 }
                 else{
                     LATBbits.LATB8 = 1;
-                } 
-                
+                }  
             }
         }
         LATBbits.LATB8 = 0; // if no LEDs are pressed then LED is off

@@ -68,9 +68,9 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xd8           0x144  (324)
-.text                        0x2d8               0x172           0x22b  (555)
+.text                        0x2d8               0x16a           0x21f  (543)
 
-                 Total "program" memory used (bytes):          0x36f  (879) 5%
+                 Total "program" memory used (bytes):          0x363  (867) 5%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x600]
@@ -105,7 +105,7 @@ External Symbols in Program Memory (by address):
                   0x0002ec                  _IOcheck
                   0x00038a                  _NewClk
                   0x0003fe                  _Delay_ms
-                  0x00043a                  _main
+                  0x000432                  _main
 
 External Symbols in Program Memory (by name):
 
@@ -119,7 +119,7 @@ External Symbols in Program Memory (by name):
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x00043a                  _main
+                  0x000432                  _main
 
 Memory Configuration
 
@@ -227,27 +227,27 @@ __FDS
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x16fc
+.debug_info       0x000000       0x1713
  *(.debug_info)
  .debug_info      0x000000        0x184 build/default/production/main.o
  .debug_info      0x000184        0x872 build/default/production/IOs.o
  .debug_info      0x0009f6        0x54d build/default/production/ChangeClk.o
- .debug_info      0x000f43        0x7b9 build/default/production/TimeDelay.o
+ .debug_info      0x000f43        0x7d0 build/default/production/TimeDelay.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x35b
+.debug_abbrev     0x000000        0x36a
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0x59 build/default/production/main.o
  .debug_abbrev    0x000059         0xbf build/default/production/IOs.o
  .debug_abbrev    0x000118        0x123 build/default/production/ChangeClk.o
- .debug_abbrev    0x00023b        0x120 build/default/production/TimeDelay.o
+ .debug_abbrev    0x00023b        0x12f build/default/production/TimeDelay.o
 
-.debug_line       0x000000        0x48f
+.debug_line       0x000000        0x48e
  *(.debug_line)
  .debug_line      0x000000        0x10e build/default/production/main.o
  .debug_line      0x00010e        0x137 build/default/production/IOs.o
  .debug_line      0x000245        0x11d build/default/production/ChangeClk.o
- .debug_line      0x000362        0x12d build/default/production/TimeDelay.o
+ .debug_line      0x000362        0x12c build/default/production/TimeDelay.o
 
 .debug_frame      0x000000         0xec
  *(.debug_frame)
@@ -735,13 +735,13 @@ __c30_signature
  .ivt._T1Interrupt
                   0x00001a          0x2 build/default/production/TimeDelay.o
 
-.text             0x0002d8        0x172
+.text             0x0002d8        0x16a
  .text            0x0002d8         0xb2 build/default/production/IOs.o
                   0x0002d8                  _IOinit
                   0x0002ec                  _IOcheck
  .text            0x00038a         0x74 build/default/production/ChangeClk.o
                   0x00038a                  _NewClk
- .text            0x0003fe         0x3c build/default/production/TimeDelay.o
+ .text            0x0003fe         0x34 build/default/production/TimeDelay.o
                   0x0003fe                  _Delay_ms
- .text            0x00043a         0x10 build/default/production/main.o
-                  0x00043a                  _main
+ .text            0x000432         0x10 build/default/production/main.o
+                  0x000432                  _main
